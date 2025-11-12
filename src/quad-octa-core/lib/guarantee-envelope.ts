@@ -26,7 +26,7 @@ export function setAssuranceMode(
   envelope: GuaranteeEnvelope,
   mode: AssuranceMode,
 ): GuaranteeEnvelope {
-  let guarantee: number
+  let guarantee: number = 0
   switch (mode) {
     case 'Green':
       guarantee = 1.0

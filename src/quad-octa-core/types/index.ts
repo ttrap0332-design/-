@@ -6,16 +6,15 @@
 /**
  * Eight fundamental forces in the Quad-Octa system
  */
-export enum QuadOctaForce {
-  ENERGY = 'Energy',
-  MATTER = 'Matter',
-  TIME = 'Time',
-  SOUND = 'Sound',
-  MOTION = 'Motion',
-  LIGHT = 'Light',
-  SPIRIT = 'Spirit',
-  CODE = 'Code',
-}
+export type QuadOctaForce =
+  | 'Energy'
+  | 'Matter'
+  | 'Time'
+  | 'Sound'
+  | 'Motion'
+  | 'Light'
+  | 'Spirit'
+  | 'Code'
 
 /**
  * Blue Engine Core (BEC) - Master clock and harmonics engine
@@ -146,11 +145,7 @@ export interface PrayerToken {
 /**
  * Guarantee Envelope - Connectivity assurance modes
  */
-export enum AssuranceMode {
-  GREEN = 'Green', // Full guarantee
-  AMBER = 'Amber', // Partial guarantee
-  RED = 'Red', // Minimal guarantee
-}
+export type AssuranceMode = 'Green' | 'Amber' | 'Red'
 
 /**
  * Guarantee Envelope for connectivity
@@ -228,20 +223,19 @@ export interface QuadOctaDevice {
 /**
  * Types of Quad-Octa compliant devices
  */
-export enum DeviceType {
-  SMARTCAM_QO = 'EVO SmartCam-QO',
-  SMARTSOUND_QO = 'SmartSound-QO',
-  SMARTPOSTER_QO = 'SmartPosters-QO',
-  SMARTAD_QO = 'SmartAds-QO',
-  OPTICS_QO = 'EVO Optics-QO',
-  WEAPON_SIGHT_QO = 'Weapon Sights-QO',
-}
+export type DeviceType =
+  | 'EVO SmartCam-QO'
+  | 'SmartSound-QO'
+  | 'SmartPosters-QO'
+  | 'SmartAds-QO'
+  | 'EVO Optics-QO'
+  | 'Weapon Sights-QO'
 
 /**
  * EVO SmartCam-QO - Multi-dimensional aperture
  */
 export interface SmartCamQO extends QuadOctaDevice {
-  type: DeviceType.SMARTCAM_QO
+  type: 'EVO SmartCam-QO'
   aperture: MultiDimensionalAperture
   dimensionCapture: string[] // Captured dimensions
 }
@@ -260,7 +254,7 @@ export interface MultiDimensionalAperture {
  * SmartSound-QO - 8-band harmonic emission
  */
 export interface SmartSoundQO extends QuadOctaDevice {
-  type: DeviceType.SMARTSOUND_QO
+  type: 'SmartSound-QO'
   harmonicBands: HarmonicBand[]
   emissionPower: number
 }
@@ -279,7 +273,7 @@ export interface HarmonicBand {
  * SmartPosters/SmartAds-QO - Market/culture event handling
  */
 export interface SmartAdQO extends QuadOctaDevice {
-  type: DeviceType.SMARTPOSTER_QO | DeviceType.SMARTAD_QO
+  type: 'SmartPosters-QO' | 'SmartAds-QO'
   eventType: 'market' | 'culture'
   qohValidations: number
   audience: string[]
@@ -289,7 +283,7 @@ export interface SmartAdQO extends QuadOctaDevice {
  * EVO Optics/Weapon Sights-QO - Military sync with rules of engagement
  */
 export interface WeaponSightQO extends QuadOctaDevice {
-  type: DeviceType.OPTICS_QO | DeviceType.WEAPON_SIGHT_QO
+  type: 'EVO Optics-QO' | 'Weapon Sights-QO'
   militarySync: boolean
   rulesOfEngagement: boolean // 8/8 + prayer token required
   targetingActive: boolean
